@@ -1,0 +1,22 @@
+# Variable precedence(priority)
+# 1. CLi
+# 2. task level
+# 3. role level
+# 4. play level
+
+- name: Variables demo
+  hosts: localhost
+  connection: local
+  vars:
+    a: 100
+  roles:
+    - sample
+  tasks:
+    - name: Print Variable
+      ansible.builtin.debug:
+        msg: a - {{ a }}
+    - name: Print Variable task level
+      vars:
+        a: 200
+      ansible.builtin.debug:
+        msg: a - {{ a }}
