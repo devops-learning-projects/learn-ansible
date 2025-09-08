@@ -2,7 +2,7 @@
 # 1. CLi
 # 2. task level
 # 3. role level
-# 4. play level
+# 4. play level (a:100)
 
 - name: Variables demo
   hosts: localhost
