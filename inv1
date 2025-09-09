@@ -1,0 +1,7 @@
+[PROD]
+server1.maidevops.fun
+server2.maidevops.fun
+
+[UAT]
+example1.maidevops.fun
+example2.maidevops.fun
