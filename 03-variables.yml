@@ -20,3 +20,10 @@
         a: 200
       ansible.builtin.debug:
         msg: a - {{ a }}
+
+- name: Variable demo1
+  hosts: all
+  tasks:
+    - name: Variable From Inventory
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
