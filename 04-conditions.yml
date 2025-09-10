@@ -8,9 +8,9 @@
     - name: When
       ansible.builtin.debug:
         msg: Okay
-        when: x > 500
+      when: x > 500
 
     - name: Print Boolean
       ansible.builtin.debug:
         msg: Yeah
-        when: my_boolean
+      when: my_boolean
