@@ -63,12 +63,12 @@
   vars:
     my_string: abc
     my_number: 123
-    my_boolean1: True # false is alternative (true/false)
+    my_boolean: True # false is alternative (true/false)
     my_boolean2: yes # no is alternative (Yes/No)
   tasks:
     - name: Print
       ansible.builtin.debug:
-        msg: "string - {{ my_string }}, number - {{ my_number }}, boolean1 - {{ my_boolean }}, boolean2 - {{ my_boolean }}"
+        msg: "string - {{ my_string }}, number - {{ my_number }}, boolean1 - {{ my_boolean }}, boolean2 - {{ my_boolean1 }}"
 
 - name: Variable Types
   hosts: localhost
