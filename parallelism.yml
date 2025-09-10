@@ -1,0 +1,8 @@
+- name: Parallelism
+  hosts: all
+  tasks:
+    - name: shell
+      ansible.builtin.shell: sleep 2
+
+# to get 2 node at a time:
+# ansible-playbook -i inv3 -e ansible_user=ec2-user -e ansible_password=DevOps321 -f 2 08*
