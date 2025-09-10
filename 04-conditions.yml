@@ -1,0 +1,16 @@
+- name: Conditionals
+  hosts: localhost
+  connection: local
+  vars:
+    x: 400
+    my_boolean: true
+  tasks:
+    - name: When
+      ansible.builtin.debug:
+        msg: Okay
+        when: x > 500
+
+    - name: Print Boolean
+      ansible.builtin.debug:
+        msg: Yeah
+        when: my_boolean
