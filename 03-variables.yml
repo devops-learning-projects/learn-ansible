@@ -68,7 +68,7 @@
   tasks:
     - name: Print
       ansible.builtin.debug:
-        msg: "string - {{ my_string }}, number - {{ my_number }}, boolean1 - {{ my_boolean }}, boolean2 - {{ my_boolean1 }}"
+        msg: "string - {{ my_string }}, number - {{ my_number }}, boolean1 - {{ my_boolean }}, boolean2 - {{ my_boolean2 }}"
 
 - name: Variable Types
   hosts: localhost
