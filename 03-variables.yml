@@ -44,3 +44,47 @@
     - name: Print a fact
       ansible.builtin.debug:
         msg: ansible_architecture - {{ ansible_architecture }}
+
+- name: Register Results
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Get update
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: Print out
+      ansible.builtin.debug:
+        msg: "{{ out }}"
+
+- name: Variable Data Types
+  hosts: localhost
+  connection: local
+  vars:
+    my_string: abc
+    my_number: 123
+    my_boolean1: True # false is alternative (true/false)
+    my_boolean2: yes # no is alternative (Yes/No)
+  tasks:
+    - name: Print
+      ansible.builtin.debug:
+        msg: "string - {{ my_string }}, number - {{ my_number }}, boolean1 - {{ my_boolean }}, boolean2 - {{ my_boolean }}"
+
+- name: Variable Types
+  hosts: localhost
+  connection: local
+  vars:
+    my_default: value
+    my_list: [3,4,0]
+    my_list2:
+      - 3
+      - 4
+      - 0
+    my_map: {key1: value1, key2: value2}
+    my_map2:
+      key1: value1
+      key2: value2
+  tasks:
+    - name: Print
+      ansible.builtin.debug:
+        msg: "first value of list - {{ my_list2[0] }}, first value of map - {{ my_map['key1'] }}"
