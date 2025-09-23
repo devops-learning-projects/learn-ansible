@@ -5,13 +5,26 @@
     - name: loop
       ansible.builtin.debug:
         msg: Hello - {{ item }}
-      loop:
+      with_items:
         - one
         - two
 
     - name: loop1
       ansible.builtin.debug:
         msg: Fruit name - {{ item.name }}, Price - {{ item.price }}
-      loop:
+      with_items:
         - {name: Apple, price: 4$}
         - {name: Orange, price: 3$}
+
+---
+- name: Loop Example
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Loop
+      ansible.builtin.debug:
+        msg: "hello - {{ item }}"
+      with_items:
+        - Mainul
+        - Islam
+        - DevSecOps
