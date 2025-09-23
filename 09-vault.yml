@@ -14,3 +14,5 @@
     - name: Print Message
       ansible.builtin.debug:
         msg: "{{ Message }}"
+
+## ansible-playbook 09-vault.yml -J(enterPassword=mai123)
