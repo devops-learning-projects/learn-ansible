@@ -5,7 +5,7 @@
     x: 400
     my_boolean: true
   tasks:
-    - name: When
+    - name: when
       ansible.builtin.debug:
         msg: Okay
       when: x > 500
