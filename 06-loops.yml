@@ -1,22 +1,4 @@
-- name: Loops Demo
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: loop
-      ansible.builtin.debug:
-        msg: Hello - {{ item }}
-      with_items:
-        - one
-        - two
 
-    - name: loop1
-      ansible.builtin.debug:
-        msg: Fruit name - {{ item.name }}, Price - {{ item.price }}
-      with_items:
-        - {name: Apple, price: 4$}
-        - {name: Orange, price: 3$}
-
----
 - name: Loop Example
   hosts: localhost
   connection: local
