@@ -1,12 +1,17 @@
-
-- name: Loop Example
+- name: Loops Demo
   hosts: localhost
   connection: local
   tasks:
-    - name: Loop
+    - name: loop
       ansible.builtin.debug:
-        msg: "hello - {{ item }}"
+        msg: Hello - {{ item }}
       with_items:
-        - Mainul
-        - Islam
-        - DevSecOps
+        - one
+        - two
+
+    - name: loop1
+      ansible.builtin.debug:
+        msg: Fruit name - {{ item.name }}, Price - {{ item.price }}
+      with_items:
+        - {name: Apple, price: 4$}
+        - {name: Orange, price: 3$}
